@@ -53,7 +53,7 @@ button {
 }
 body {
     line-height: 1;
-	background-color: #E5E5E5;
+	background-color: #8C11BE;
 }
 `;
 
