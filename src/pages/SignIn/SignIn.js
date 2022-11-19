@@ -17,7 +17,7 @@ export default function SignIn() {
     setLoading(true);
 
     axios
-      .post(`${BASE_URL}/auth/sign-in`, {
+      .post(`${BASE_URL}/sign-in`, {
         email,
         password,
       })
@@ -50,7 +50,7 @@ export default function SignIn() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" disabled={loading} loading={loading}>
+        <button type="submit" disabled={loading}>
           Entrar
         </button>
       </Form>

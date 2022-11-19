@@ -8,7 +8,7 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [comfirmPassword, setConfirmPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
@@ -16,12 +16,17 @@ export default function SignUp() {
     e.preventDefault();
     setLoading(true);
 
+    if (password !== confirmPassword) {
+      alert("Senhas diferentes");
+      setLoading(false);
+      return;
+    }
+
     axios
-      .post(`${BASE_URL}/auth/sign-up`, {
+      .post(`${BASE_URL}/sign-up`, {
         email,
         name,
         password,
-        comfirmPassword,
       })
       .then(() => {
         setLoading(false);
@@ -67,7 +72,7 @@ export default function SignUp() {
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-        <button disabled={loading} loading={loading} type="submit">
+        <button disabled={loading} type="submit">
           Cadastrar
         </button>
       </Form>
