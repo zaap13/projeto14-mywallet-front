@@ -7,6 +7,7 @@ export const Main = styled.main`
   align-items: center;
   justify-content: space-evenly;
   padding: 25px;
+  gap: 15px;
 
   span {
     display: flex;
